@@ -7,6 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
 			<Navbar />
+			dasd dsad das dsadsadsa dsa dsa
 			{children}
 			<Footer />
 		</>
