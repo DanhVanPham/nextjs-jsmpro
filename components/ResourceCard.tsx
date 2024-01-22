@@ -15,6 +15,7 @@ type ResourceCardProps = {
 	title: string;
 	image: string;
 	downloadNumber: number;
+	downloadLink: string;
 	slug: string;
 };
 
@@ -23,6 +24,7 @@ function ResourceCard({
 	title,
 	image,
 	downloadNumber,
+	downloadLink,
 	slug,
 }: ResourceCardProps) {
 	return (
@@ -57,7 +59,7 @@ function ResourceCard({
 					{downloadNumber}
 				</div>
 				<Link
-					href={`/resource/${id}`}
+					href={downloadLink}
 					className="flex-center text-gradient_purple-blue body-semibold gap-1.5"
 				>
 					Download Now

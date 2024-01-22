@@ -48,6 +48,7 @@ async function HomePage({ searchParams }: Props) {
 									title={resource.title}
 									image={resource.image}
 									downloadNumber={resource.views}
+									downloadLink={resource.downloadLink}
 									slug={resource._id}
 								/>
 							))
@@ -59,6 +60,29 @@ async function HomePage({ searchParams }: Props) {
 					</div>
 				</section>
 			)}
+			{resourcesPlaylist.map((item: any) => (
+				<section
+					key={item._id}
+					className="flex-center mt-6 w-full flex-col sm:mt-20"
+				>
+					<h1 className="heading3 self-start text-white-800">
+						{item.title}
+					</h1>
+					<div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+						{item?.resources?.map((resource: any) => (
+							<ResourceCard
+								key={resource._id}
+								id={resource._id}
+								title={resource.title}
+								image={resource.image}
+								downloadNumber={resource.views}
+								downloadLink={resource.downloadLink}
+								slug={resource._id}
+							/>
+						))}
+					</div>
+				</section>
+			))}
 		</main>
 	);
 }
